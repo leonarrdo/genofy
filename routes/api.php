@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthenticatedTokenController;
+use App\Http\Controllers\NotaFiscalController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,9 @@ Route::post('/login', [AuthenticatedTokenController::class, 'store']);
 
 Route::post('/user', [UserController::class, 'store']);
 
-Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
-    return $request->user();
+//Rotas das notas fiscais
+Route::middleware(['auth:sanctum'])->group(function (){
+    Route::post('/nota', [NotaFiscalController::class, 'store']);
+    Route::get('/nota', [NotaFiscalController::class, 'getAll']);
+    Route::get('/nota/{numero}', [NotaFiscalController::class, 'getByNumber']);
 });

@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class NotaFiscal extends Model
+class Nota extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'numero',
         'valor',
         'data_emissao',

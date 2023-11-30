@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('notas_fiscais', function (Blueprint $table) {
+        Schema::create('notas', function (Blueprint $table) {
             $table->id();
+            $table->index('user_id');
             $table->foreignId('user_id')->constrained('users');
             $table->char('numero', 9);
             $table->float('valor', 8, 2);
-            $table->date('data_emissao');
+            $table->date('data_emissao')->nullable();
             $table->char('cnpj_remetente');
             $table->char('nome_remetente', 100);
             $table->char('cnpj_transportador');
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notas_fiscais');
+        Schema::dropIfExists('notas');
     }
 };

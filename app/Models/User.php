@@ -43,7 +43,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function notasFiscais(){
-        return $this->hasMany(notasFiscais::class);
+    public function notas(){
+        return $this->hasMany(Nota::class, 'user_id');
     }
 }
