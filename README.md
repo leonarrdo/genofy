@@ -8,7 +8,7 @@ Algumas rotas só podem ser acessadas por usuários autenticados.
 
 ## Documentação
 
-Documentação feita com Postman, disponível aqui:  [Documentação Genofy](https://documenter.getpostman.com/view/10576832/2s9YeHbBG).
+Documentação feita com Postman, disponível aqui: [Documentação Genofy](https://documenter.getpostman.com/view/10576832/2s9YeHbBGx){:target="_blank"}.
 
 ### Tecnologias utilizadas
 
